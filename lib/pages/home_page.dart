@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:walletappui/util/my_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.only(
+                top: 25.0,
+                right: 25,
+                left: 25,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -50,6 +56,8 @@ class _HomePageState extends State<HomePage> {
             Container(
               height: 200,
               child: PageView(
+                scrollDirection: Axis.horizontal,
+                controller: _controller,
                 children: const [
                   MyCard(
                     balance: 5250.20,
@@ -75,6 +83,14 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            SizedBox(height: 20),
+            SmoothPageIndicator(
+              controller: _controller,
+              count: 3,
+              effect: ExpandingDotsEffect(
+                activeDotColor: Colors.grey.shade600,
+              ),
+            )
           ],
         ),
       ),
