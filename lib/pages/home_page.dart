@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:walletappui/util/my_card.dart';
 
@@ -45,7 +47,34 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 25),
-            MyCard(),
+            Container(
+              height: 200,
+              child: PageView(
+                children: const [
+                  MyCard(
+                    balance: 5250.20,
+                    cardNumber: 45289431,
+                    expiryMonth: 02,
+                    expiryYear: 25,
+                    color: Colors.deepPurple,
+                  ),
+                  MyCard(
+                    balance: 1269.78,
+                    cardNumber: 76489238,
+                    expiryMonth: 09,
+                    expiryYear: 26,
+                    color: Colors.red,
+                  ),
+                  MyCard(
+                    balance: 12798.77,
+                    cardNumber: 49856755,
+                    expiryMonth: 12,
+                    expiryYear: 29,
+                    color: Colors.blue,
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

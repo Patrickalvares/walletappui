@@ -1,54 +1,71 @@
 import 'package:flutter/material.dart';
 
 class MyCard extends StatelessWidget {
-  const MyCard({super.key});
+  final double balance;
+  final int cardNumber;
+  final int expiryMonth;
+  final int expiryYear;
+  // ignore: prefer_typing_uninitialized_variables
+  final color;
+
+  const MyCard(
+      {Key? key,
+      required this.balance,
+      required this.cardNumber,
+      required this.expiryMonth,
+      required this.expiryYear,
+      required this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      width: 300,
-      decoration: BoxDecoration(
-        color: Colors.deepPurple[300],
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const SizedBox(
-          height: 10,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        width: 300,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(12),
         ),
-        const Text(
-          'Balanço:',
-          style: TextStyle(color: Colors.white),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Text(
-          'R\$ 5.257,36',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const SizedBox(
+            height: 10,
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Text(
-              '**** 3456',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+          const Text(
+            'Balanço:',
+            style: TextStyle(color: Colors.white),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            'R\$ $balance',
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 28,
             ),
-            Text('10/24',
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                cardNumber.toString(),
                 style: TextStyle(
                   color: Colors.white,
-                )),
-          ],
-        ),
-      ]),
+                ),
+              ),
+              Text('$expiryMonth/$expiryYear',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
+            ],
+          ),
+        ]),
+      ),
     );
   }
 }
