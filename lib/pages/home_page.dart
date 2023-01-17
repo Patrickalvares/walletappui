@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:walletappui/util/my_button.dart';
 import 'package:walletappui/util/my_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -90,6 +91,31 @@ class _HomePageState extends State<HomePage> {
               effect: ExpandingDotsEffect(
                 activeDotColor: Colors.grey.shade600,
               ),
+            ),
+            const SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  MyButton(
+                    iconURL: 'lib/images/send-money.png',
+                    buttonText: 'Depositar',
+                  ),
+                  MyButton(
+                    iconURL: 'lib/images/credit-card.png',
+                    buttonText: 'Pagar Fatura',
+                  ),
+                  MyButton(
+                    iconURL: 'lib/images/bill.png',
+                    buttonText: 'Extrato',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 25),
+            Column(
+              children: [],
             )
           ],
         ),
