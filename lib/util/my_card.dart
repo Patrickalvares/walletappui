@@ -54,12 +54,12 @@ class MyCard extends StatelessWidget {
             children: [
               Text(
                 cardNumber.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
               Text('$expiryMonth/$expiryYear',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   )),
             ],
