@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 25),
             Container(
-              height: 200,
+              height: 189.21,
               child: PageView(
                 scrollDirection: Axis.horizontal,
                 controller: _controller,
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 25),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -113,9 +113,52 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 25),
-            Column(
-              children: [],
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Colors.grey.shade100,
+                            ),
+                            height: 80,
+                            child: Image.asset('lib/images/statistics.png'),
+                          ),
+                          SizedBox(width: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Estatísticas',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                'Entradas e Saídas Futuras',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.grey.shade700,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
