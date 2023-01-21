@@ -18,9 +18,7 @@ class MyButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                  color: Colors.grey.shade500,
-                  blurRadius: 20,
-                  spreadRadius: 10),
+                  color: Colors.grey.shade400, blurRadius: 5, spreadRadius: 1),
             ],
           ),
           child: Center(
